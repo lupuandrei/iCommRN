@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 import * as screenKeys from '../screen_keys';
 import Settings from './settings';
 
-
-
-// DRAWER
 const Tab = createBottomTabNavigator();
 class NavigationTab extends Component {
   render() {

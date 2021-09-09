@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, {Component} from 'react';
+import {Image, StyleSheet, View} from 'react-native';
 import PrimaryButton from '../../components/buttons/primary_button';
-import { SIGN_IN } from '../../navigation/screen_keys';
-import { Colors, Spacing } from '../../styles';
+import {SIGN_IN} from '../../navigation/screen_keys';
+import {Colors, Spacing} from '../../styles';
 import LoginButton from './components/login_button';
-
 
 export class Welcome extends Component {
   _navigateSignUp = () => {
@@ -18,11 +17,18 @@ export class Welcome extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.logoContainer}>
+          <Image
+            source={require('../../assets/images/logo.png')}
+            style={styles.logo}
+          />
+        </View>
 
         <View style={styles.buttonsContainer}>
           <PrimaryButton
             title="Sign up"
             onPress={this._navigateSignUp}
+            disabled
           />
 
           <LoginButton
@@ -40,12 +46,18 @@ const styles = StyleSheet.create({
     paddingTop: Spacing.SCALE_18,
     backgroundColor: Colors.WHITE,
   },
+  logoContainer: {
+    flex: 0.8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logo: {
+    width: '80%',
+    height: 100,
+    marginBottom: Spacing.BOTTOM_SPACE,
+  },
   loginButton: {
     marginTop: Spacing.SCALE_8,
-  },
-  paginationContainer: {
-    marginLeft: 'auto',
-    marginRight: 0,
   },
   buttonsContainer: {
     flex: 0.2,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import { Input } from 'react-native-elements';
 import { showMessage } from 'react-native-flash-message';
 import { connect } from 'react-redux';
@@ -32,7 +32,10 @@ class SignIn extends Component {
   render() {
     return (
       <View style={styles.container}>
-  
+       <Image
+          source={require('../../assets/images/logo.png')}
+          style={styles.logo}
+        />
         <Input
           label="Email address"
           placeholder="Enter your email address"

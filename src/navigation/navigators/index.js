@@ -25,7 +25,7 @@ class NavigationStack extends Component {
       <NavigationContainer>
         <Spinner visible={this.props.isFetching} textContent={'Loading ...'} />
 
-        <Stack.Navigator headerMode="none">
+        <Stack.Navigator screenOptions={{headerShown: false}}>
           {this.props.session.accessToken ? (
               <Stack.Screen
                 name={STACK_MAIN_APP}
