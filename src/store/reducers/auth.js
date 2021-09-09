@@ -19,11 +19,12 @@ export default (state = initialState, action = {}) => {
         ...state.session,
         accessToken: accessToken,
         refreshToken: refreshToken,
-        expirationTime: expirationTime
+        expirationTime: expirationTime,
       };
 
       return newState;
     case types.LOGOUT_SUCCESS:
+      return initialState;
     default:
       return state;
   }

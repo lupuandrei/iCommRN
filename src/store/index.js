@@ -9,8 +9,7 @@ import {rootReducer} from './reducers';
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: [
-  ],
+  whitelist: ['authReducer', 'appReducer'],
 };
 
 // Middleware: Redux Persist Persisted Reducer

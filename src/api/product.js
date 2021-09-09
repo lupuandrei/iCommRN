@@ -1,8 +1,8 @@
 import client from './client';
-import { ProductDetailError, ProductListError } from './error/product';
+import {ProductDetailError, ProductListError} from './error/product';
 
 export const list = async () => {
-  return client.get('/benirvingplt/products/products',).then(
+  return client.get('/benirvingplt/products/products').then(
     response => {
       return response;
     },
@@ -12,13 +12,13 @@ export const list = async () => {
   );
 };
 
-export const detail = async (productId) => {
-    return client.get(`/benirvingplt/products/products/${productId}`,).then(
-        response => {
-          return response;
-        },
-        error => {
-          throw new ProductDetailError(error);
-        },
-      );   
-}
+export const details = async productId => {
+  return client.get(`/benirvingplt/products/products/${productId}`).then(
+    response => {
+      return response;
+    },
+    error => {
+      throw new ProductDetailError(error);
+    },
+  );
+};

@@ -1,6 +1,6 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import React, {Component} from 'react';
-import Settings from '../../features/settings';
+import ShopMenu from '../../features/shop_menu';
 import * as screenKeys from '../screen_keys';
 
 // STACK
@@ -8,12 +8,12 @@ const Stack = createStackNavigator();
 class NavigationStack extends Component {
   render() {
     return (
-      <Stack.Navigator initialRouteName={screenKeys.SETTINGS_MAIN}>
+      <Stack.Navigator initialRouteName={screenKeys.SHOP_MENU}>
         <Stack.Screen
-          name={screenKeys.SETTINGS_MAIN}
-          component={Settings}
+          name={screenKeys.SHOP_MENU}
+          component={ShopMenu}
           options={{
-            title: 'My Account',
+            title: 'Shop',
           }}
         />
       </Stack.Navigator>
