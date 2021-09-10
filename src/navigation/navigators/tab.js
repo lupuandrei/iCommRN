@@ -4,6 +4,7 @@ import * as screenKeys from '../screen_keys';
 import Settings from './settings';
 import Shop from './shop';
 import Bag from './bag';
+import {Icon} from 'react-native-elements/dist/icons/Icon';
 
 const Tab = createBottomTabNavigator();
 class NavigationTab extends Component {
@@ -17,6 +18,9 @@ class NavigationTab extends Component {
           component={Shop}
           options={{
             title: 'Shop',
+            tabBarIcon: () => {
+              return <Icon name="home"></Icon>;
+            },
           }}
         />
 
@@ -25,6 +29,9 @@ class NavigationTab extends Component {
           component={Bag}
           options={{
             title: 'Bag',
+            tabBarIcon: () => {
+              return <Icon name="shopping-bag"></Icon>;
+            },
           }}
         />
         <Tab.Screen
@@ -32,6 +39,9 @@ class NavigationTab extends Component {
           component={Settings}
           options={{
             title: 'My Account',
+            tabBarIcon: () => {
+              return <Icon name="person"></Icon>;
+            },
           }}
         />
       </Tab.Navigator>
