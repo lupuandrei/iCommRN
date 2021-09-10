@@ -1,6 +1,6 @@
 import {APP_MENU_REQUEST} from './app';
 import {LOGIN_REQUEST} from './auth';
-import {PRODUCT_LIST_REQUEST} from './product';
+import {PRODUCT_LIST_REQUEST, PRODUCT_DETAILS_REQUEST} from './product';
 
 export const GLOBAL_LOADING = [
   // APP
@@ -11,5 +11,5 @@ export const GLOBAL_LOADING = [
 
   // PRODUCT
   PRODUCT_LIST_REQUEST,
-  PRODUCT_LIST_REQUEST,
+  PRODUCT_DETAILS_REQUEST,
 ];
