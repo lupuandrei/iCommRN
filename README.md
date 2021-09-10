@@ -1,5 +1,11 @@
 # React Native Javascript
 
+## Improvements
+
+1. Filter products by category
+2. Infinite scroll on product list
+3. The first product's [image](image http://cdn-img.prettylittlething.com/9/0/a/a/90aa90903a135ee59594f47c7685aa7ef3046e44_cly8063_1.jpg?imwidth=1024) has **http** instead of **https** on iOS. For that **Info.plis** was modified and there was added **cdn-img.prettylittlething.com** in _App Transport Security Settings > Exception Domains_
+
 ## How to install
 
 1. Install packages
@@ -49,11 +55,9 @@
 
 > Library: [react-native-navigation](https://reactnavigation.org/docs/getting-started/)
 
-
 ### 9. React Native Flash Message
 
 > Library: [react-native-flash-message](https://github.com/lucasferreira/react-native-flash-message)
-
 
 ### 10. Axios
 
