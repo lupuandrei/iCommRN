@@ -1,3 +1,4 @@
+import {LOGOUT_SUCCESS} from '../types/auth';
 import * as bagTypes from '../types/bag';
 
 const initialState = {
@@ -12,10 +13,10 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
+  const newState = {...state};
   switch (action.type) {
     case bagTypes.BAG_PRODUCT_ADD:
-      const newState = {...state};
-      const {productId, quantity} = action.payload;
+      var {productId, quantity} = action.payload;
 
       // check if the product has been already into shop cart
       if (!state.bag[productId.toString()]) {
@@ -23,11 +24,27 @@ export default (state = initialState, action) => {
         newState.bag[productId.toString()] = {quantity};
       } else {
         // it's already into the cart, increment the quantity
-        newState.bag[`${productId}`].quantity =
-          newState.bag[`${productId}`].quantity + quantity;
+        newState.bag[`${productId}`].quantity++;
       }
 
+      console.log('newState', newState);
       return newState;
+    case bagTypes.BAG_PRODUCT_QUANTITY_INCREASE:
+      var {productId} = action.payload;
+
+      newState.bag[`${productId}`].quantity++;
+      console.log('newState', newState);
+
+      return newState;
+    case bagTypes.BAG_PRODUCT_QUANTITY_DECREASE:
+      var {productId} = action.payload;
+
+      newState.bag[`${productId}`].quantity--;
+      console.log('newState', newState);
+
+      return newState;
+    case LOGOUT_SUCCESS:
+      return initialState;
     default:
       return state;
   }
