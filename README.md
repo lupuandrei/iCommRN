@@ -1,10 +1,12 @@
 # React Native Javascript
 
-## Improvements
+## Improvements & Warnings
 
 1. Filter products by category
 2. Infinite scroll on product list
-3. The first product's [image](image http://cdn-img.prettylittlething.com/9/0/a/a/90aa90903a135ee59594f47c7685aa7ef3046e44_cly8063_1.jpg?imwidth=1024) has **http** instead of **https** on iOS. For that **Info.plis** was modified and there was added **cdn-img.prettylittlething.com** in _App Transport Security Settings > Exception Domains_
+3. Refresh product list
+4. Resize product image using the param query string **imwidth**
+5. The first product's [image](image http://cdn-img.prettylittlething.com/9/0/a/a/90aa90903a135ee59594f47c7685aa7ef3046e44_cly8063_1.jpg?imwidth=1024) has **http** instead of **https** on iOS. For that **Info.plis** was modified and there was added **cdn-img.prettylittlething.com** in _App Transport Security Settings > Exception Domains_
 
 ## How to install
 
@@ -66,3 +68,7 @@
 ### 11. Overlay Spinner
 
 > Library: [react-native-loading-spinner-overlay](https://www.npmjs.com/package/react-native-loading-spinner-overlay)
+
+### 12. Fit Image
+
+> Library: [react-native-fit-image](https://github.com/huiseoul/react-native-fit-image)

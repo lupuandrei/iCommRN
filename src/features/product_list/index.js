@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, Text, View, FlatList} from 'react-native';
-import {Button} from 'react-native-elements';
+import {FlatList, StyleSheet, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {SHOP_PRODUCT_DETAILS} from '../../navigation/screen_keys';
 import {productList} from '../../store/actions/product';
@@ -28,14 +27,21 @@ const ProductList = ({navigation}) => {
         image={item.image}
         price={item.price}
         onPress={() => {
-          navigation.navigate(SHOP_PRODUCT_DETAILS, {item});
+          navigation.navigate(SHOP_PRODUCT_DETAILS, {productId: item.id});
         }}></ListItem>
     );
   };
 
+  _keyExtractor = (item, index) => index.toString();
+
   return (
     <View style={styles.container}>
-      <FlatList data={products} renderItem={_renderItem} numColumns={2} />
+      <FlatList
+        data={products}
+        keyExtractor={_keyExtractor}
+        renderItem={_renderItem}
+        numColumns={2}
+      />
     </View>
   );
 };

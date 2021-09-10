@@ -1,14 +1,13 @@
 import React from 'react';
-import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {Text} from 'react-native-elements';
-import {Colors, Spacing} from '../../../styles';
 import Strong from '../../../components/strong';
+import {Colors, Spacing} from '../../../styles';
 
 const ListItem = ({name, image, price, onPress}) => {
-  console.log('image', image);
   return (
     <TouchableOpacity onPress={onPress} style={styles.cell}>
-      <Image source={{uri: image}} style={{width: '80%', height: 100}} />
+      <Image source={{uri: image}} style={{width: 100, height: 100}} />
       <Text style={{marginTop: Spacing.SCALE_8}} h5>
         <Strong>£{price}</Strong>
       </Text>

@@ -17,7 +17,7 @@ const ShopMenu = ({navigation}) => {
     }
   }, []);
 
-  // MARK: - Render
+  // Render
 
   _keyExtractor = (item, index) => index.toString();
 
