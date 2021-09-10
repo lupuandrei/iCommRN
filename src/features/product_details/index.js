@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {Text} from 'react-native-elements';
 import FitImage from 'react-native-fit-image';
+import {showMessage} from 'react-native-flash-message';
 import {useDispatch, useSelector} from 'react-redux';
 import PrimaryButton from '../../components/buttons/primary_button';
 import {bagProductAdd} from '../../store/actions/bag';
@@ -26,6 +27,10 @@ const ProductDetails = ({route}) => {
   // Events
 
   const onAddToBagPress = () => {
+    // showMessage({
+    //   message: `${product.name} was added to your bag`,
+    // });
+
     dispatch(bagProductAdd(productId, 1));
   };
 
@@ -37,7 +42,7 @@ const ProductDetails = ({route}) => {
         <Text h5>£{product.price}</Text>
 
         <PrimaryButton
-          title="Add to back"
+          title="Add to bag"
           style={{marginTop: SCALE_18}}
           onPress={onAddToBagPress}
         />

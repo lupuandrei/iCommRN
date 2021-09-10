@@ -10,7 +10,9 @@
 2. Infinite scroll on product list
 3. Refresh product list
 4. Resize product image using the param query string **imwidth**
-5. The first product's [image](image http://cdn-img.prettylittlething.com/9/0/a/a/90aa90903a135ee59594f47c7685aa7ef3046e44_cly8063_1.jpg?imwidth=1024) has **http** instead of **https** on iOS. For that **Info.plis** was modified and there was added **cdn-img.prettylittlething.com** in _App Transport Security Settings > Exception Domains_
+5. TabBar icon change tint when the tab is active
+6. The first product's [image](image http://cdn-img.prettylittlething.com/9/0/a/a/90aa90903a135ee59594f47c7685aa7ef3046e44_cly8063_1.jpg?imwidth=1024) has **http** instead of **https** on iOS. For that **Info.plis** was modified and there was added **cdn-img.prettylittlething.com** in _App Transport Security Settings > Exception Domains_
+7. _Warning: EventEmitter.removeListener('change', ...): Method has been deprecated_ is an warning from [react-native-flash-message](https://github.com/lucasferreira/react-native-flash-message/issues/176)
 
 ## How to install
 
