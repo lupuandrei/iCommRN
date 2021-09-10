@@ -1,11 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Alert, StyleSheet, Text, View} from 'react-native';
 import {Avatar, Button, Icon, ListItem as ListI} from 'react-native-elements';
 import {useDispatch, useSelector} from 'react-redux';
 import Strong from '../../../components/strong';
 import {
   bagProductQuantityDecrease,
   bagProductQuantityIncrease,
+  bagProductRemove,
 } from '../../../store/actions/bag';
 import {Spacing} from '../../../styles';
 
@@ -18,6 +19,8 @@ const ListItem = ({productId, quantity}) => {
     });
   });
 
+  // Events
+
   const onIncreasePress = () => {
     dispatch(bagProductQuantityIncrease(productId));
   };
@@ -25,6 +28,22 @@ const ListItem = ({productId, quantity}) => {
   const onDecreasePress = () => {
     dispatch(bagProductQuantityDecrease(productId));
   };
+
+  const onRemovePress = () => {
+    Alert.alert('Are you sure?', null, [
+      {
+        text: 'Cancel',
+        style: 'cancel',
+      },
+      {
+        text: 'OK',
+        style: 'destructive',
+        onPress: () => dispatch(bagProductRemove(productId)),
+      },
+    ]);
+  };
+
+  // Render
 
   return (
     <ListI bottomDivider>
@@ -49,6 +68,11 @@ const ListItem = ({productId, quantity}) => {
           <Strong>{quantity}</Strong>
           <Button title="+" onPress={onIncreasePress}></Button>
         </View>
+
+        <Button
+          title="Remove"
+          onPress={onRemovePress}
+          style={{marginTop: Spacing.SCALE_18}}></Button>
       </ListI.Content>
     </ListI>
   );

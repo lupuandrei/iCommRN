@@ -12,6 +12,17 @@ export const bagProductAdd = (productId, quantity = 1) => {
   };
 };
 
+export const bagProductRemove = productId => {
+  return dispatch => {
+    dispatch({
+      type: bagTypes.BAG_PRODUCT_REMOVE,
+      payload: {
+        productId,
+      },
+    });
+  };
+};
+
 export const bagProductQuantityIncrease = productId => {
   return dispatch => {
     dispatch({

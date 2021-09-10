@@ -31,6 +31,16 @@ export default (state = initialState, action) => {
         ...state,
         bag: Object.assign({}, bag),
       };
+    case bagTypes.BAG_PRODUCT_REMOVE:
+      var {bag} = state;
+      var {productId} = action.payload;
+
+      delete bag[`${productId}`];
+
+      return {
+        ...state,
+        bag: Object.assign({}, bag),
+      };
     case bagTypes.BAG_PRODUCT_QUANTITY_INCREASE:
       var {bag} = state;
 

@@ -16,7 +16,7 @@ export const list = async () => {
 export const details = async productId => {
   return client.get(`/benirvingplt/products/products/${productId}`).then(
     response => {
-      return response.data.map;
+      return normalizeProduct(response.data);
     },
     error => {
       throw new ProductDetailError(error);
