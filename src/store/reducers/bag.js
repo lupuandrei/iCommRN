@@ -62,7 +62,10 @@ export default (state = initialState, action) => {
         bag: Object.assign({}, bag),
       };
     case LOGOUT_SUCCESS:
-      return initialState;
+      return {
+        ...initialState,
+        bag: {},
+      };
     default:
       return state;
   }

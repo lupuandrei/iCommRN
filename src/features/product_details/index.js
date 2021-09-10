@@ -27,9 +27,9 @@ const ProductDetails = ({route}) => {
   // Events
 
   const onAddToBagPress = () => {
-    // showMessage({
-    //   message: `${product.name} was added to your bag`,
-    // });
+    showMessage({
+      message: `${product.name} was added to your bag`,
+    });
 
     dispatch(bagProductAdd(productId, 1));
   };
