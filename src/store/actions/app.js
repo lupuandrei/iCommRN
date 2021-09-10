@@ -5,16 +5,15 @@ import * as appAPI from '../../api/app';
 
 const appMenuRequest = () => {
   return {type: appTypes.APP_MENU_REQUEST};
-}
+};
 
-const appMenuSuccess = (payload) => {
-  return {type: appTypes.APP_MENU_SUCCESS, payload}
-}
+const appMenuSuccess = payload => {
+  return {type: appTypes.APP_MENU_SUCCESS, payload};
+};
 
-const appMenuFailure = (payload) => {
+const appMenuFailure = payload => {
   return {type: appTypes.APP_MENU_FAILURE, payload};
-}
-
+};
 
 // APP MENU
 export const appMenu = () => {
@@ -31,4 +30,4 @@ export const appMenu = () => {
       },
     );
   };
-}
+};

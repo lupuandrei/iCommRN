@@ -2,13 +2,16 @@ import * as appTypes from '../types/app';
 
 const initialState = {
   isLoading: false,
-  menu: []
+  menu: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case appTypes.APP_MENU_SUCCESS:
-      return state;
+      const newState = {...state};
+      newState.menu = action.payload;
+
+      return newState;
     default:
       return state;
   }

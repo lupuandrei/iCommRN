@@ -22,7 +22,9 @@ class NavigationStack extends Component {
         <Stack.Screen
           name={screenKeys.SHOP_CATEGORY_LIST}
           component={ProductCategoryList}
-          options={({route}) => ({title: route.params?.title ?? 'Categories'})}
+          options={({route}) => ({
+            title: route.params?.headerName ?? 'Categories',
+          })}
         />
 
         <Stack.Screen

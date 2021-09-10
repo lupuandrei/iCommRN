@@ -1,20 +1,55 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {Button} from 'react-native-elements';
+import {SectionList, StyleSheet} from 'react-native';
+import {ListItem, Text} from 'react-native-elements';
 import {SHOP_PRODUCT_LIST} from '../../navigation/screen_keys';
+import {margin} from '../../styles/mixins';
+import {SCALE_12, SCALE_16} from '../../styles/spacing';
 
-const ProductCategoryList = ({navigation}) => {
+const ProductCategoryList = ({navigation, route}) => {
   console.log('navigation', navigation);
-  return (
-    <View>
-      <Text>Product category list</Text>
-      <Button
-        title="product list"
+
+  // adapt categories and subcategories received from server
+  const categories = () => {
+    return route.params.categories.map(category => {
+      return {
+        name: category.name,
+        data: category.categories,
+      };
+    });
+  };
+
+  // MARK: - Render
+
+  const _renderItem = ({item}) => {
+    return (
+      <ListItem
         onPress={() => {
-          console.log('ma-ta', navigation);
-          navigation.navigate(SHOP_PRODUCT_LIST);
-        }}></Button>
-    </View>
+          console.log('item', item);
+          navigation.navigate(SHOP_PRODUCT_LIST, {
+            headerTitle: item,
+            category: item,
+          });
+        }}
+        bottomDivider>
+        <ListItem.Content>
+          <ListItem.Title>{item}</ListItem.Title>
+        </ListItem.Content>
+        <ListItem.Chevron />
+      </ListItem>
+    );
+  };
+
+  return (
+    <SectionList
+      sections={categories()}
+      keyExtractor={(item, index) => item + index}
+      renderItem={_renderItem}
+      renderSectionHeader={({section: {name}}) => (
+        <Text style={margin(SCALE_16, SCALE_12, SCALE_16, SCALE_12)} h4>
+          {name}
+        </Text>
+      )}
+    />
   );
 };
 

@@ -10,7 +10,7 @@ class NavigationTab extends Component {
   render() {
     return (
       <Tab.Navigator
-        initialRouteName={screenKeys.STACK_SETTINGS}
+        initialRouteName={screenKeys.STACK_SHOP}
         screenOptions={{headerShown: false}}>
         <Tab.Screen
           name={screenKeys.STACK_SHOP}
