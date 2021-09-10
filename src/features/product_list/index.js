@@ -7,11 +7,12 @@ import {Spacing} from '../../styles';
 import ListItem from './components/list_item';
 
 const ProductList = ({navigation}) => {
+  const dispatch = useDispatch();
+
   const products = useSelector(state => {
     return state.productReducer.products;
   });
 
-  const dispatch = useDispatch();
   useEffect(() => {
     if (products.length == 0) {
       dispatch(productList());
@@ -20,7 +21,7 @@ const ProductList = ({navigation}) => {
 
   // RENDER
 
-  _renderItem = ({item}) => {
+  const _renderItem = ({item}) => {
     return (
       <ListItem
         name={item.name}
@@ -32,7 +33,7 @@ const ProductList = ({navigation}) => {
     );
   };
 
-  _keyExtractor = (item, index) => index.toString();
+  const _keyExtractor = (item, index) => index.toString();
 
   return (
     <View style={styles.container}>

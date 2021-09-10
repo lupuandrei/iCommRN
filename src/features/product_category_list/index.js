@@ -6,8 +6,6 @@ import {margin} from '../../styles/mixins';
 import {SCALE_12, SCALE_16} from '../../styles/spacing';
 
 const ProductCategoryList = ({navigation, route}) => {
-  console.log('navigation', navigation);
-
   // adapt categories and subcategories received from server
   const categories = () => {
     return route.params.categories.map(category => {
@@ -24,7 +22,6 @@ const ProductCategoryList = ({navigation, route}) => {
     return (
       <ListItem
         onPress={() => {
-          console.log('item', item);
           navigation.navigate(SHOP_PRODUCT_LIST, {
             headerTitle: item,
             category: item,

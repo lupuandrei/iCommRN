@@ -11,3 +11,25 @@ export const bagProductAdd = (productId, quantity = 1) => {
     });
   };
 };
+
+export const bagProductQuantityIncrease = productId => {
+  return dispatch => {
+    dispatch({
+      type: bagTypes.BAG_PRODUCT_QUANTITY_INCREASE,
+      payload: {
+        productId,
+      },
+    });
+  };
+};
+
+export const bagProductQuantityDecrease = productId => {
+  return dispatch => {
+    dispatch({
+      type: bagTypes.BAG_PRODUCT_QUANTITY_DECREASE,
+      payload: {
+        productId,
+      },
+    });
+  };
+};

@@ -13,36 +13,44 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  const newState = {...state};
   switch (action.type) {
     case bagTypes.BAG_PRODUCT_ADD:
+      var {bag} = state;
       var {productId, quantity} = action.payload;
 
       // check if the product has been already into shop cart
-      if (!state.bag[productId.toString()]) {
+      if (!bag[productId.toString()]) {
         // is not into the cart add it
-        newState.bag[productId.toString()] = {quantity};
+        bag[productId.toString()] = {quantity};
       } else {
         // it's already into the cart, increment the quantity
-        newState.bag[`${productId}`].quantity++;
+        bag[`${productId}`].quantity++;
       }
 
-      console.log('newState', newState);
-      return newState;
+      return {
+        ...state,
+        bag: Object.assign({}, bag),
+      };
     case bagTypes.BAG_PRODUCT_QUANTITY_INCREASE:
+      var {bag} = state;
+
       var {productId} = action.payload;
+      bag[`${productId}`].quantity++;
 
-      newState.bag[`${productId}`].quantity++;
-      console.log('newState', newState);
-
-      return newState;
+      return {
+        ...state,
+        bag: Object.assign({}, bag),
+      };
     case bagTypes.BAG_PRODUCT_QUANTITY_DECREASE:
+      var {bag} = state;
+
       var {productId} = action.payload;
+      bag[`${productId}`].quantity--;
 
-      newState.bag[`${productId}`].quantity--;
-      console.log('newState', newState);
-
-      return newState;
+      return {
+        ...state,
+        bag: Object.assign({}, bag),
+      };
     case LOGOUT_SUCCESS:
       return initialState;
     default:

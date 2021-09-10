@@ -3,6 +3,7 @@
 ## TODO
 
 1. Update product details from product list reducer
+2. Keep the order of date when a product was added into cart
 
 ## Improvements & Warnings
 
