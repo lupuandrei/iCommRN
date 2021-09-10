@@ -18,7 +18,7 @@ const ProductCategoryList = ({navigation, route}) => {
     });
   };
 
-  // MARK: - Render
+  // Render
 
   const _renderItem = ({item}) => {
     return (

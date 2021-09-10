@@ -1,4 +1,8 @@
-# React Native Javascript
+# iCommRN
+
+## TODO
+
+1. Update product details from product list reducer
 
 ## Improvements & Warnings
 
@@ -72,3 +76,7 @@
 ### 12. Fit Image
 
 > Library: [react-native-fit-image](https://github.com/huiseoul/react-native-fit-image)
+
+### 13. Vector Icons
+
+> Library: [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
